@@ -1,10 +1,3 @@
-const path = require('path');
-const webpack = require('webpack');
-
-function resolve (dir) {
-  return path.join(__dirname, dir);
-}
-
 const isProd = process.env.NODE_ENV === 'production';
 
 const assetsCDN = {
@@ -34,18 +27,6 @@ const vueConfig = {
     configureWebpack: {
           // if prod, add externals
         externals: isProd ? assetsCDN.externals : {}
-    },
-
-    chainWebpack: () => {
-        config.resolve.alias.set('@$', resolve('src'));
-        // if prod is on
-        // assets require on cdn
-        if (isProd) {
-            config.plugin('html').tap(args => {
-                args[0].cdn = assetsCDN
-                return args
-            })
-        }
     },
 
      devServer: {
