@@ -12,8 +12,9 @@ export default {
 
 <template>
   <div id="app">
-    <h1> Welcome, click image below to continue </h1>
-    <img class="box" alt="CoVID19" src="../assets/covid19img.jpg" v-on:click="goToStats">
+    <h1 class="title"> Welcome</h1>
+    <h2 class="subtitle">click image below to continue</h2>
+    <img class="box" alt="COVID19" src="../assets/covid19img.jpg" v-on:click="goToStats">
   </div>
 </template>
 
@@ -23,8 +24,16 @@ export default {
   border-radius:10px;
   border: 1px solid #ccc;
   background: #fff;
+  height: 500px;
 }
 .box:hover {
   box-shadow: 0 0 32px rgba(255,0,0,.9);
 }
+.title {
+    font-family: 'Paytone One', sans-serif;
+    text-transform: uppercase;
+}
+.subtitle {
+    font-family: 'Paytone One', sans-serif;
+} 
 </style>
