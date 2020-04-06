@@ -42,7 +42,7 @@ const vueConfig = {
   },
 
     lintOnSave: isProd !== 'production',
-    runtimeCompiler: true, // will allow you to use the template option in Vue components, but will incur around an extra 10kb payload for your app
+    runtimeCompiler: true, // will allow you to use the template option in Vue components
     transpileDependencies: [],
     crossorigin: undefined,
 }
